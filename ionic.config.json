@@ -1,0 +1,7 @@
+{
+  "name": "layouts-poc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
