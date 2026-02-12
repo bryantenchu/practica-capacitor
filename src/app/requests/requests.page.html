@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Solicitudes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Banner amarillo -->
+  <div class="hero-banner">
+    <h1>{{ heroBannerTitle }}</h1>
+    <div class="hero-illustration">
+      <div class="illustration-placeholder">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-icon name="person-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secciones -->
+  @for (section of sections; track section.title) {
+    <div class="request-section">
+      <h2 class="section-title">{{ section.title }}</h2>
+      <div class="actions-grid">
+        @for (action of section.items; track action.label) {
+          <div class="action-card" [class.highlighted]="action.isNew">
+            @if (action.isNew) {
+              <ion-badge color="warning" class="new-badge">NUEVO</ion-badge>
+            }
+            <div class="action-icon">
+              <ion-icon [name]="action.icon"></ion-icon>
+            </div>
+            <span class="action-label">{{ action.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</ion-content>

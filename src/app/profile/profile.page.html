@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Avatar y nombre -->
+  <div class="user-card">
+    <div class="avatar">
+      <span>{{ userInitial }}</span>
+    </div>
+    <h2 class="user-name">{{ userName }}</h2>
+    <p class="last-connection">Última conexión: {{ lastConnection }}</p>
+  </div>
+
+  <!-- Secciones del perfil -->
+  @for (section of sections; track section.title) {
+    <div class="profile-section">
+      <h3 class="section-title">{{ section.title }}</h3>
+      <div class="menu-group">
+        @for (item of section.items; track item.label; let last = $last) {
+          <button class="menu-item">
+            <ion-icon [name]="item.icon" class="menu-icon"></ion-icon>
+            <span class="menu-label">{{ item.label }}</span>
+            <ion-icon name="chevron-forward" class="menu-arrow"></ion-icon>
+          </button>
+          @if (!last) {
+            <div class="divider"></div>
+          }
+        }
+      </div>
+    </div>
+  }
+</ion-content>

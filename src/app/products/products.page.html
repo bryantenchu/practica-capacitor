@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Mis productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Título -->
+  <div class="page-header">
+    <h1>{{ title }}</h1>
+    <span class="subtitle">Tienes {{ accounts.length }} productos</span>
+  </div>
+
+  <!-- Mis cuentas -->
+  <section class="accounts-section">
+    <h2 class="section-title">Mis cuentas</h2>
+
+    @for (account of accounts; track account.number) {
+      <div class="account-row">
+        <div class="fav-icon">
+          @if (account.isFavorite) {
+            <ion-icon name="star" class="fav-active"></ion-icon>
+          } @else {
+            <ion-icon name="star-outline" class="fav-inactive"></ion-icon>
+          }
+        </div>
+        <div class="account-info">
+          <strong>{{ account.name }}</strong>
+          <span class="account-number">Nro. {{ account.number }}</span>
+        </div>
+        <div class="account-balance">
+          <strong>{{ account.balance | currency:'USD':'symbol':'1.2-2' }}</strong>
+          <span class="balance-label">Saldo disponible</span>
+        </div>
+        <ion-icon name="chevron-forward" class="arrow"></ion-icon>
+      </div>
+    }
+
+    <!-- Total -->
+    <div class="total-row">
+      <span class="total-label">Total de cuentas</span>
+      <strong class="total-amount">{{ totalBalance | currency:'USD':'symbol':'1.2-2' }}</strong>
+    </div>
+  </section>
+</ion-content>

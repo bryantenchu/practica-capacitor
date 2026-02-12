@@ -1,27 +1,335 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+// ===== Header =====
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.logo {
+  display: flex;
+  align-items: center;
+
+  .logo-img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+.help-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
 
-  color: #8c8c8c;
-
-  margin: 0;
+  ion-icon {
+    font-size: 22px;
+    color: #003da5;
+  }
 }
 
-#container a {
-  text-decoration: none;
+ion-header {
+  background: #ffffff;
+
+  &::after {
+    display: none;
+  }
+}
+
+ion-toolbar {
+  --background: #ffffff;
+  --border-width: 0;
+  --opacity: 1;
+}
+
+// ===== Banner promocional =====
+.promo-banner {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 8px 16px;
+  gap: 12px;
+
+  .promo-icon {
+    background: #e8eaf6;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    ion-icon {
+      font-size: 22px;
+      color: #003da5;
+    }
+  }
+
+  .promo-text {
+    flex: 1;
+
+    strong {
+      font-size: 14px;
+      color: #1a1a1a;
+    }
+
+    p {
+      font-size: 12px;
+      color: #666;
+      margin: 2px 0 0;
+    }
+  }
+
+  .promo-arrow {
+    font-size: 20px;
+    color: #333;
+    flex-shrink: 0;
+  }
+}
+
+// ===== Mis productos =====
+.products-section {
+  padding: 16px 0;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 16px;
+    margin-bottom: 4px;
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #888;
+    }
+
+    .see-all {
+      font-size: 14px;
+      color: #003da5;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      white-space: nowrap;
+      margin-top: 4px;
+
+      ion-icon {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// ===== Filtros =====
+.filters {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ion-chip {
+    --background: #ffffff;
+    --color: #333;
+    border: 1.5px solid #ddd;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 34px;
+    padding: 0 16px;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &.active {
+      --background: #1a1a1a;
+      --color: #ffffff;
+      border-color: #1a1a1a;
+      font-weight: 600;
+    }
+  }
+}
+
+// ===== Tarjetas de cuentas =====
+.accounts-scroll {
+  display: flex;
+  gap: 12px;
+  padding: 8px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.account-card {
+  background: #f7f7f7;
+  border-radius: 16px;
+  padding: 20px;
+  min-width: 280px;
+  max-width: 320px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+
+  .account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    .account-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      display: block;
+    }
+
+    .account-number {
+      font-size: 13px;
+      color: #888;
+    }
+  }
+
+  .favorite-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #666;
+
+    ion-icon {
+      font-size: 16px;
+      color: #ffc107;
+    }
+  }
+
+  .account-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .label {
+      font-size: 12px;
+      color: #888;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .balance {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+
+      ion-icon {
+        font-size: 20px;
+        color: #003da5;
+      }
+    }
+
+    .account-type {
+      text-align: right;
+
+      span {
+        font-size: 13px;
+        color: #333;
+      }
+    }
+  }
+}
+
+// ===== Acciones rápidas =====
+.actions-section {
+  padding: 24px 16px;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 16px;
+  }
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.action-card {
+  background: #ffffff;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  min-height: 100px;
+
+  &.highlighted {
+    border-color: #ffd100;
+    border-width: 2px;
+  }
+
+  .new-badge {
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    font-size: 9px;
+    font-weight: 700;
+    --background: #ffd100;
+    --color: #1a1a1a;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .action-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #e8eef8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-icon {
+      font-size: 22px;
+      color: #003da5;
+    }
+  }
+
+  .action-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.3;
+  }
 }

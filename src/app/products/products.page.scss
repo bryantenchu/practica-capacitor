@@ -1,0 +1,136 @@
+// ===== Header =====
+ion-header {
+  background: #ffffff;
+
+  &::after {
+    display: none;
+  }
+}
+
+ion-toolbar {
+  --background: #ffffff;
+  --border-width: 0;
+
+  ion-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #003da5;
+  }
+}
+
+// ===== Page Header =====
+.page-header {
+  padding: 20px 16px 8px;
+  border-bottom: 1px solid #eee;
+
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #003da5;
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: #888;
+  }
+}
+
+// ===== Accounts Section =====
+.accounts-section {
+  padding: 20px 16px;
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 12px;
+  }
+}
+
+// ===== Account Row =====
+.account-row {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  gap: 12px;
+
+  .fav-icon {
+    flex-shrink: 0;
+
+    .fav-active {
+      font-size: 28px;
+      color: #ffc107;
+    }
+
+    .fav-inactive {
+      font-size: 28px;
+      color: #ffc107;
+      opacity: 0.4;
+    }
+  }
+
+  .account-info {
+    flex: 1;
+
+    strong {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      display: block;
+    }
+
+    .account-number {
+      font-size: 13px;
+      color: #888;
+    }
+  }
+
+  .account-balance {
+    text-align: right;
+
+    strong {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      display: block;
+    }
+
+    .balance-label {
+      font-size: 12px;
+      color: #888;
+    }
+  }
+
+  .arrow {
+    font-size: 18px;
+    color: #999;
+    flex-shrink: 0;
+  }
+}
+
+// ===== Total =====
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0 0;
+  border-top: 1px solid #eee;
+  margin-top: 4px;
+
+  .total-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .total-amount {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+}

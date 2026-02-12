@@ -1,0 +1,110 @@
+{
+  "home": {
+    "filters": ["Cuentas", "Tarjetas", "Préstamos", "Inversiones"],
+    "promoBanner": {
+      "title": "¿Necesitas una cuenta?",
+      "description": "Abre aquí una cuenta adicional y organiza tu dinero."
+    },
+    "productsHeader": {
+      "title": "Mis productos",
+      "subtitle": "Tienes 7 productos"
+    },
+    "accounts": [
+      {
+        "name": "JULIANA",
+        "number": "******7381",
+        "type": "Cuenta Transaccional",
+        "isFavorite": true
+      },
+      {
+        "name": "AHORRO",
+        "number": "******4209",
+        "type": "Cuenta de Ahorros",
+        "isFavorite": false
+      },
+      {
+        "name": "CORRIENTE",
+        "number": "******6152",
+        "type": "Cuenta Corriente",
+        "isFavorite": false
+      }
+    ],
+    "quickActions": [
+      { "icon": "cash-outline", "label": "Transferir dinero", "isNew": false },
+      { "icon": "bulb-outline", "label": "Pagar servicios", "isNew": false },
+      { "icon": "card-outline", "label": "Pagar tarjetas", "isNew": false },
+      { "icon": "phone-portrait-outline", "label": "Retirar sin tarjeta", "isNew": false },
+      { "icon": "phone-portrait-outline", "label": "Recargar celular", "isNew": false },
+      { "icon": "qr-code-outline", "label": "Pagar a un QR Deuna", "isNew": true },
+      { "icon": "link-outline", "label": "Cobrar con link", "isNew": false }
+    ]
+  },
+  "products": {
+    "title": "Todos mis productos",
+    "accounts": [
+      { "name": "PRINCIPAL", "number": "3847291056", "balance": 0.86, "isFavorite": true },
+      { "name": "DEUNA", "number": "5093817264", "balance": 11.87, "isFavorite": false },
+      { "name": "AHO056", "number": "7261048395", "balance": 0.00, "isFavorite": false },
+      { "name": "FLEXIBLE", "number": "4185930672", "balance": 0.00, "isFavorite": false },
+      { "name": "FLEXRETO", "number": "6920374518", "balance": 0.00, "isFavorite": false },
+      { "name": "DECIMOS", "number": "8534162907", "balance": 0.00, "isFavorite": false }
+    ]
+  },
+  "requests": {
+    "heroBanner": {
+      "title": "¿Qué necesitas hacer hoy?"
+    },
+    "sections": [
+      {
+        "title": "Hacer trámites sin ir a agencias",
+        "items": [
+          { "icon": "person-outline", "label": "Actualización de datos", "isNew": false },
+          { "icon": "document-text-outline", "label": "Estado de cuentas", "isNew": false },
+          { "icon": "document-outline", "label": "Certificado bancario", "isNew": false },
+          { "icon": "flag-outline", "label": "Límite de transferencias", "isNew": false },
+          { "icon": "clipboard-outline", "label": "Seguimiento de reclamos", "isNew": true }
+        ]
+      },
+      {
+        "title": "Productos financieros para ti",
+        "items": [
+          { "icon": "card-outline", "label": "Tarjetas de débito", "isNew": false },
+          { "icon": "shield-checkmark-outline", "label": "Seguros", "isNew": false },
+          { "icon": "trending-up-outline", "label": "Depósito a plazo", "isNew": false },
+          { "icon": "wallet-outline", "label": "Cuenta de ahorro", "isNew": false },
+          { "icon": "cash-outline", "label": "Avance de efectivo", "isNew": false },
+          { "icon": "logo-usd", "label": "Crédito multiproducto", "isNew": false }
+        ]
+      }
+    ]
+  },
+  "profile": {
+    "user": {
+      "name": "BRYAN",
+      "initial": "B",
+      "lastConnection": "12 feb. 2026 | 13:33"
+    },
+    "sections": [
+      {
+        "title": "Información personal",
+        "items": [
+          { "icon": "person-outline", "label": "Datos personales" }
+        ]
+      },
+      {
+        "title": "Configuración",
+        "items": [
+          { "icon": "business-outline", "label": "Cuentas" },
+          { "icon": "eye-off-outline", "label": "Ocultar mi dinero" },
+          { "icon": "lock-closed-outline", "label": "Seguridad" }
+        ]
+      },
+      {
+        "title": "Salud financiera",
+        "items": [
+          { "icon": "checkmark-circle-outline", "label": "Calificación Crediticia" }
+        ]
+      }
+    ]
+  }
+}

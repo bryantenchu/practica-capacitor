@@ -1,20 +1,102 @@
-<ion-header [translucent]="true">
+<!-- Header -->
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <div class="header-content">
+      <div class="logo">
+        <img src="assets/logo-pichincha.png" alt="Banco Pichincha" class="logo-img" />
+      </div>
+      <button class="help-btn">
+        <ion-icon name="help-circle-outline"></ion-icon>
+        <span>Ayuda</span>
+      </button>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Banner promocional -->
+  <div class="promo-banner">
+    <div class="promo-icon">
+      <ion-icon name="card-outline"></ion-icon>
+    </div>
+    <div class="promo-text">
+      <strong>{{ promoBanner.title }}</strong>
+      <p>{{ promoBanner.description }}</p>
+    </div>
+    <ion-icon name="chevron-forward" class="promo-arrow"></ion-icon>
   </div>
+
+  <!-- Mis productos -->
+  <section class="products-section">
+    <div class="section-header">
+      <div>
+        <h2>{{ productsHeader.title }}</h2>
+        <span class="subtitle">{{ productsHeader.subtitle }}</span>
+      </div>
+      <a class="see-all">Ver todos <ion-icon name="chevron-forward"></ion-icon></a>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters">
+      @for (filter of filters; track filter) {
+        <ion-chip
+          [class.active]="selectedFilter === filter"
+          (click)="selectFilter(filter)"
+        >
+          {{ filter }}
+        </ion-chip>
+      }
+    </div>
+
+    <!-- Cards de cuentas -->
+    <div class="accounts-scroll">
+      @for (account of accounts; track account.number) {
+        <div class="account-card">
+          <div class="account-header">
+            <div>
+              <strong class="account-name">{{ account.name }}</strong>
+              <span class="account-number">{{ account.number }}</span>
+            </div>
+            @if (account.isFavorite) {
+              <div class="favorite-badge">
+                <ion-icon name="star" color="warning"></ion-icon>
+                <span>Cta. favorita</span>
+              </div>
+            }
+          </div>
+          <div class="account-body">
+            <div>
+              <span class="label">Saldo disponible</span>
+              <div class="balance">
+                <span>$ *.**</span>
+                <ion-icon name="eye-off-outline"></ion-icon>
+              </div>
+            </div>
+            <div class="account-type">
+              <span class="label">Cuenta</span>
+              <span>{{ account.type }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Acciones rápidas -->
+  <section class="actions-section">
+    <h2>¿Qué quieres hacer?</h2>
+    <div class="actions-grid">
+      @for (action of quickActions; track action.label) {
+        <div class="action-card" [class.highlighted]="action.isNew">
+          @if (action.isNew) {
+            <ion-badge color="warning" class="new-badge">NUEVO</ion-badge>
+          }
+          <div class="action-icon">
+            <ion-icon [name]="action.icon"></ion-icon>
+          </div>
+          <span class="action-label">{{ action.label }}</span>
+        </div>
+      }
+    </div>
+  </section>
 </ion-content>
